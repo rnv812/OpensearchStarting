@@ -32,6 +32,19 @@ services:
       OPENSEARCH_HOSTS: '["https://opensearch:9200"]'
     networks:
       - opensearch-net
+  logstash:
+    image: opensearchproject/logstash-oss-with-opensearch-output-plugin:latest
+    container_name: logstash
+    volumes:
+      - ./logstash/pipeline:/usr/share/logstash/pipeline:ro
+    ports:
+      - "5044:5044"
+    environment:
+      LS_JAVA_OPTS: "-Xmx256m -Xms256m"
+    networks:
+      - opensearch-net
+    depends_on:
+      - opensearch
 
 volumes:
   opensearch-data:
