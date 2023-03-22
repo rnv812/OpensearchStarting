@@ -39,7 +39,7 @@ services:
     container_name: logstash
     volumes:
       - ./test.txt:/test.txt
-      - ./logstash/pipeline_filebeat.conf:/usr/share/logstash/pipeline/logstash.conf:ro
+      - ./logstash/logstash_filebeat.conf:/usr/share/logstash/pipeline/logstash.conf:ro
     ports:
       - "5044:5044"
     environment:
