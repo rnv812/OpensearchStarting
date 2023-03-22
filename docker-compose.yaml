@@ -38,7 +38,6 @@ services:
     image: opensearchproject/logstash-oss-with-opensearch-output-plugin:latest
     container_name: logstash
     volumes:
-      - ./test.txt:/test.txt
       - ./logstash/logstash_filebeat.conf:/usr/share/logstash/pipeline/logstash.conf:ro
     ports:
       - "5044:5044"
