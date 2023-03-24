@@ -1,8 +1,11 @@
+# /etc/filebeat/filebeat.yml
+
 filebeat.inputs:
 - type: filestream
   id: my-filestream-id
   paths:
     - /var/log/syslog
+    - /vat/log/*.log
 
 output.logstash:
   hosts: ["localhost:5044"]
