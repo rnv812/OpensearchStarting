@@ -1,6 +1,6 @@
 testgroup:
   hosts:
     host1:
-      ansible_host: 92.53.69.171
+      ansible_host: <server-ip>
   vars:
     ansible_user: root
