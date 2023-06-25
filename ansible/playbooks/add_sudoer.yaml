@@ -1,0 +1,14 @@
+- name: Add sudoer play
+  hosts: testgroup
+  tasks:
+    - name: Add the user 'nikita' with a specific uid
+      ansible.builtin.user:
+        name: nikita
+        uid: 1100
+
+    - name: Allow the nikita user to run any commands with sudo
+      community.general.sudoers:
+        name: sudo-for-nikita
+        state: present
+        user: nikita
+        commands: ALL

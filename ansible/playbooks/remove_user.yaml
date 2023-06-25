@@ -1,0 +1,8 @@
+- name: Remove user play
+  hosts: testgroup
+  tasks:
+    - name: Remove the user 'nikita'
+      ansible.builtin.user:
+        name: nikita
+        state: absent
+        remove: yes
